@@ -53,6 +53,7 @@ ul {
 	border-bottom-width: 3px;
 	border-bottom-color: white;
 	border-bottom-style: solid;
+	color: rgba(150,102,98,1);
 }
 
 .todo-list input {
@@ -60,14 +61,14 @@ ul {
 }
 
 .todo-list input + label::before {
-	content: '⬜️';
-	color: rgba(150,102,98,1);
+	content: "☐   		";
+	color: orange;
 	margin-left: 10px;
 }
 
 .todo-list input:checked + label::before {
-	content: '✓';
-	color: rgba(150,102,98,1);
+	content: '✓			';
+	color: orange;
 	margin-left: 10px;
 }
 
@@ -88,4 +89,8 @@ button {
 	padding: 5px;
 	color: rgba(150,102,98,1);
 	background: rgba(255,255,255,0);
+}
+
+#no-items {
+	color: gray;
 }
