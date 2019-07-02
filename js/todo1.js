@@ -3,6 +3,7 @@ let taskList = document.querySelector('.todo-list')
 let tasks = JSON.parse(localStorage.getItem('tasks')) || []
 let delAllBtn = document.querySelector('#deleteAll')
 let deleteComp = document.querySelector('#deleteComp')
+let selectAll = document.querySelector('#selectAll')
 
 // add tasks and persist them
 function addTask(e) {
@@ -26,9 +27,9 @@ function addTask(e) {
 function displayTasks(tasks = [], taskList) {
 	taskList.innerHTML = tasks.map( (task, i )=> {
 		return `
-			<li> 
-				<input type="checkbox" id="task${i}" data-index="${i}"  ${task.isDone ? "checked" : ""} />
-				<label for="task${i}">${task.newTask}</label> 
+			<li class="list-group-item lists"> 
+				<input type="checkbox" class="col-lg-2" id="task${i}" data-index="${i}"  ${task.isDone ? "checked" : ""} />
+				<label for="task${i}" class="col-lg-8">${task.newTask}</label> 
 				<button class="delBtn" data-id="${i}">Delete</button>
 			</li>
 		` 
@@ -47,8 +48,10 @@ function toggleDone(e) {
 	
 }
 
+
+//delete individual task
 document.querySelector('.todo-list').addEventListener('click', function(e) {
-	//console.log(e.target)
+	console.log(e.target)
 	if (e.target.className == "delBtn") {
 
 		if (!confirm('Are you sure you want to delete this?')) {
@@ -95,6 +98,16 @@ deleteComp.addEventListener('click', function(e) {
 //	localStorage.removeItem('tasks')	
 	displayTasks(tasks, taskList)
 })
+
+// selectAll.addEventListener('click', function() {
+// 	//let i = e.target.dataset.index
+// 	//console.log(i)
+// 	tasks.isDone = !tasks.isDone 
+// 	//console.log(tasks[i].isDone)
+// 	localStorage.setItem('tasks', JSON.stringify(tasks))
+// 	displayTasks(tasks, taskList)
+
+// })
 
 
 displayTasks(tasks, taskList)

@@ -4,25 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- font awesome -->
+<!--      <link href="css/font-awesome.min.css" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Gochi+Hand&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="./css/style.css">
+
     <title>Document</title>
 </head>
 <body>
-        <form action="" id="todo">
-            
-            <input type="text" name="task" id="taskName" placeholder="task">
-            <button type="submit" id="addTaskBtn">Submit</button>
-      
+
+    <div class="container-task col-lg-7 col-md-11 col-sm-10">
+        <h1>Task Manager</h1>
+
+        <form action="" id="todo" class="col-lg-10 mx-auto">
+            <div class="input-group mb-3">
+            <input class="form-control" type="text" name="task" id="taskName" placeholder="task">
+                                  
+              <div class="input-group-append">
+                <button type="submit" title="Submit" class="input-group-text rounded-1 bg-warning" id="addTaskBtn"><i class="fas fa-paper-plane"></i></button>
+              </div>
+            </div>
         </form>
 
-    <ul class="todo-list">
-    
 
-    </ul>    
+        <ul class="todo-list col-lg-10 mx-auto text-center list-group">
+        
 
-    <button id="deleteAll">Delete All</button>
-    <button id="deleteComp">Delete All Completed</button>
+        </ul>    
 
+        <div class="btn-container col-lg-7 mx-auto">
+            <button id="deleteAll" >Delete All</button>
+            <button id="deleteComp" >Delete All Completed</button>
+            <button id="selectAll" >Check All</button>
+        </div>
 
+    </div>
 
 
     <script src="./js/todo1.js">  </script>
