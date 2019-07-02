@@ -117,7 +117,8 @@ deselectAll.addEventListener('click', function() {
 
 //to hide the buttons when there is no items
 if (tasks.length === 0) {
-	btnContainer.style.opacity = 0
+	btnContainer.style.opacity = 0;
+	document.querySelector('#no-items').innerHTML = "No tasks yet."
 } 
  
 let done = tasks.filter(e => e.isDone === true)
